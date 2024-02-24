@@ -15,15 +15,39 @@
         }
         header {
             background-color: #222;
-            padding: 20px 0;
+            padding: 20px;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+        header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
         }
         header h1 {
             margin: 0;
             font-size: 2em;
         }
+        nav {
+            text-align: center;
+            margin-top: 140px; /* Adjust based on the height of the image */
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #aaa;
+        }
         main {
             padding: 20px;
+            margin-top: 180px; /* Adjust based on the height of the image and nav */
         }
         section {
             margin-bottom: 30px;
@@ -34,43 +58,41 @@
         p {
             color: #ccc;
         }
-        a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        a:hover {
-            color: #aaa;
-        }
         footer {
             background-color: #222;
             padding: 10px 0;
             text-align: center;
-            position: fixed;
             width: 100%;
             bottom: 0;
+            position: fixed;
         }
     </style>
 </head>
 <body>
 
     <header>
+        <img src="your-photo.jpg" alt="Your Photo">
         <h1>Your Name</h1>
-        <p>Researcher</p>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#research">Research Interests</a>
+            <a href="#publications">Publications</a>
+            <a href="#contact">Contact Me</a>
+        </nav>
     </header>
 
     <main>
-        <section>
+        <section id="about">
             <h2>About Me</h2>
             <p>Write a brief introduction about yourself and your research interests.</p>
         </section>
 
-        <section>
+        <section id="research">
             <h2>Research Interests</h2>
             <p>Describe your research interests and areas of expertise.</p>
         </section>
 
-        <section>
+        <section id="publications">
             <h2>Publications</h2>
             <ul>
                 <li>Publication 1</li>
@@ -79,7 +101,7 @@
             </ul>
         </section>
 
-        <section>
+        <section id="contact">
             <h2>Contact Me</h2>
             <p>Email: your.email@example.com</p>
             <p>Phone: +1234567890</p>
