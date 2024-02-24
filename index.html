@@ -12,41 +12,41 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
         }
-        header {
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 100%;
             background-color: #222;
             padding: 20px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
+            box-sizing: border-box;
         }
-        header img {
-            width: 150px;
-            height: 150px;
-            margin-bottom: 10px;
+        .sidebar img {
+            width: 125px;
+            height: 100px;
+            display: block;
+            margin-bottom: 20px;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-        nav {
-            text-align: center;
-           
-        }
-        nav a {
+        .sidebar nav a {
+            display: block;
             color: #fff;
             text-decoration: none;
-            margin: 0 10px;
-            font-size: 1.2em;
+            margin-bottom: 10px;
             transition: color 0.3s ease;
         }
-        nav a:hover {
+        .sidebar nav a:hover {
             color: #aaa;
         }
-        main {
+        .sidebar p {
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+        .content {
+            margin-left: 320px; /* Adjust based on the sidebar width */
             padding: 20px;
-            margin-top: 180px; /* Adjust based on the height of the image and nav */
         }
         section {
             margin-bottom: 30px;
@@ -69,18 +69,20 @@
 </head>
 <body>
 
-    <header>
+    <div class="sidebar">
         <img src="your-photo.png" alt="Your Photo">
-        <h1>Niccolo' Ciolli</h1>
+        <p>Contact:</p>
+        <p>Email: niccolo.ciolli@outlook.com</p>
+        <a href="https://www.linkedin.com/in/n-ciolli" target="_blank">Linkedin</a>
+
         <nav>
             <a href="#about">About Me</a>
             <a href="#research">Research Interests</a>
             <a href="#publications">Publications</a>
-            <a href="#contact">Contact Me</a>
         </nav>
-    </header>
+    </div>
 
-    <main>
+    <div class="content">
         <section id="about">
             <h2>About Me</h2>
             <p>Write a brief introduction about yourself and your research interests.</p>
@@ -99,16 +101,10 @@
                 <!-- Add more publications as needed -->
             </ul>
         </section>
-
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>Email: your.email@example.com</p>
-            <p>Phone: +1234567890</p>
-        </section>
-    </main>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Your Name</p>
+        <p>&copy; 2024 Niccolo' Ciolli</p>
     </footer>
 
 </body>
