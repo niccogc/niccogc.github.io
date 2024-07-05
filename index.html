@@ -6,106 +6,236 @@
     <title>Niccolo' Ciolli - Researcher</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: #fff;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #000;
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            overflow-x: hidden; /* Hide horizontal scrollbar */
         }
         .sidebar {
             position: fixed;
             top: 0;
-            left: 0;
-            width: 300px;
+            left: -240px; /* Show 10px (1 centimeter) */
+            width: 250px;
             height: 100%;
-            background-color: #222;
-            padding: 20px;
+            background-color: #000;
+            padding: 40px 20px;
             box-sizing: border-box;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        .sidebar.open {
+            left: 0;
         }
         .sidebar img {
-            width: 125px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
             display: block;
+            margin: 0 auto 30px;
+        }
+        .sidebar h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #fff;
+        }
+        .sidebar p {
             margin-bottom: 20px;
+            font-size: 14px;
+            text-align: center;
+            color: #ccc;
         }
         .sidebar nav a {
             display: block;
             color: #fff;
             text-decoration: none;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             transition: color 0.3s ease;
+            font-size: 16px;
         }
         .sidebar nav a:hover {
-            color: #aaa;
-        }
-        .sidebar p {
-            color: #ccc;
-            margin-bottom: 10px;
+            color: #3498db;
         }
         .content {
-            margin-left: 320px; /* Adjust based on the sidebar width */
-            padding: 20px;
+            margin-left: 10px; /* Match the visible part of the sidebar */
+            padding-top: 50px; /* Make room for the menu button */
+        }
+        .menu-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1001;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
         }
         section {
-            margin-bottom: 30px;
+            padding: 20px 30px;
+        }
+        #about {
+            background-color: #e0e0e0;
+        }
+        #research {
+            background-color: #d5d5d5;
+        }
+        #publications {
+            background-color: #cacaca;
+            min-height: calc(100vh - 60px); /* Subtracting header height */
         }
         h2 {
-            color: #fff;
-        }
-        p {
-            color: #ccc;
+            color: #000;
+            margin-bottom: 20px;
         }
         footer {
-            background-color: #222;
-            padding: 10px 0;
+            background-color: #000;
+            color: #fff;
             text-align: center;
+            padding: 5px 0;
+            font-size: 12px;
             width: 100%;
-            bottom: 0;
-            position: fixed;
+            z-index: 1001;
+        }
+        .social-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+        .research-interest {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .research-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .research-interest h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .research-text {
+            text-align: left;
         }
     </style>
 </head>
 <body>
-
+    <button class="menu-button">☰ Menu</button>
+    
     <div class="sidebar">
-        <img src="your-photo.png" alt="Your Photo">
-        <p>Contact:</p>
-        <p>Email: niccolo.ciolli@outlook.com</p>
-        <a href="https://www.linkedin.com/in/n-ciolli" target="_blank">Linkedin</a>
-
+        <img src="/api/placeholder/150/150" alt="Niccolo' Ciolli">
+        <h1>Niccolo' Ciolli</h1>
+        <p>Researcher</p>
         <nav>
             <a href="#about">About Me</a>
             <a href="#research">Research Interests</a>
             <a href="#publications">Publications</a>
         </nav>
+        <div class="social-links">
+            <a href="mailto:niccolo.ciolli@outlook.com">Email</a>
+            <a href="https://www.linkedin.com/in/n-ciolli" target="_blank">LinkedIn</a>
+        </div>
     </div>
 
     <div class="content">
         <section id="about">
-            <h2>About Me</h2>
-            <p>Write a brief introduction about yourself and your research interests.</p>
+            <div class="section-content">
+                <h2>About Me</h2>
+                <p>Welcome to my personal webpage. I am a dedicated researcher with a passion for [your field]. My work focuses on [brief description of your main research area].</p>
+            </div>
         </section>
 
         <section id="research">
-            <h2>Research Interests</h2>
-            <p>Describe your research interests and areas of expertise.</p>
+            <div class="section-content">
+                <h2>Research Interests</h2>
+                <div class="research-interest">
+                    <img src="/api/placeholder/60/60" alt="Research Interest 1" class="research-icon">
+                    <h3>Research Interest 1</h3>
+                    <div class="research-text">
+                        <p>Description of your first research interest. Explain the key aspects, its importance in your field, and any notable achievements or ongoing projects related to this interest.</p>
+                    </div>
+                </div>
+                <div class="research-interest">
+                    <img src="/api/placeholder/60/60" alt="Research Interest 2" class="research-icon">
+                    <h3>Research Interest 2</h3>
+                    <div class="research-text">
+                        <p>Description of your second research interest. Highlight its relevance to your overall research goals, any interdisciplinary aspects, and how it complements your other research interests.</p>
+                    </div>
+                </div>
+                <div class="research-interest">
+                    <img src="/api/placeholder/60/60" alt="Research Interest 3" class="research-icon">
+                    <h3>Research Interest 3</h3>
+                    <div class="research-text">
+                        <p>Description of your third research interest. Discuss its potential impact on the field, any innovative approaches you're taking, and how it fits into the broader context of your research agenda.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="publications">
-            <h2>Publications</h2>
-            <ul>
-                <li>Publication 1</li>
-                <li>Publication 2</li>
-                <!-- Add more publications as needed -->
-            </ul>
+            <div class="section-content">
+                <h2>Publications</h2>
+                <ul>
+                    <li>[Author(s)]. (Year). [Title of the paper]. [Journal Name], [Volume](Issue), [Page range].</li>
+                    <li>[Author(s)]. (Year). [Title of the paper]. [Journal Name], [Volume](Issue), [Page range].</li>
+                </ul>
+            </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 Niccolo' Ciolli</p>
+        <p>&copy; 2024 Niccolo' Ciolli. All rights reserved.</p>
     </footer>
 
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const menuButton = document.querySelector('.menu-button');
+        let isOpen = false;
+
+        function toggleSidebar() {
+            isOpen = !isOpen;
+            sidebar.classList.toggle('open', isOpen);
+            menuButton.textContent = isOpen ? '✕ Close' : '☰ Menu';
+        }
+
+        menuButton.addEventListener('click', toggleSidebar);
+
+        sidebar.addEventListener('mouseenter', () => {
+            if (!isOpen) toggleSidebar();
+        });
+
+        sidebar.addEventListener('mouseleave', () => {
+            if (isOpen) toggleSidebar();
+        });
+
+        // Smooth scrolling for in-page links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
